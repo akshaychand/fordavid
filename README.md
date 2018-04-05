@@ -8,6 +8,8 @@ Boilerplate code to setup a web based application that uses Flask RestPlus as a 
 
 This application requires you to have the following setup in your development laptop/workstation.
 
+Git - https://git-scm.com/downloads
+
 Python 3.6 - https://www.anaconda.com/download/
 
 NodeJS - https://www.nodejs.org

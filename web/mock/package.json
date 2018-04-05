@@ -1,0 +1,13 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "Mock server for expediting Web Development while REST API is under development",
+  "scripts": {
+    "start": "node_modules/.bin/json-server --watch db.json"
+  },
+  "author": "Akshay Chand",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.12.1"
+  }
+}
