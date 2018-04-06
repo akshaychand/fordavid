@@ -1,5 +1,8 @@
+import * as fromShared from './shared';
+
+import { BrowserModule, Title } from '@angular/platform-browser';
+
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -7,9 +10,13 @@ import { NgModule } from '@angular/core';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
+    fromShared.SharedModule
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
