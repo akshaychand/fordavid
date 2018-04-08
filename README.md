@@ -1,4 +1,4 @@
-# Flask + Angular + SocketCluster + Containers boilerplate
+# Flask + Angular + SocketCluster + Containers Boilerplate
 
 Boilerplate code to setup a web based application that uses Flask RestPlus as a backend JSON server, Angular Web application to serve content, SocketCluster for realtime data and Docker containers to provide the infrastructure.
 
