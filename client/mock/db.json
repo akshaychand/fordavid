@@ -1,19 +1,144 @@
 {
-  "posts": [
+  "loans": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "loanNumber": 1,
+      "asOfDate": "2018-01-01",
+      "originalValue": 900000,
+      "creditScore": 600,
+      "originalLoan": 630000,
+      "currentLoan": 1260000,
+      "ltv": null,
+      "state": "NY",
+      "foreclosureStatus": true,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "loanNumber": 2,
+      "asOfDate": "2018-01-01",
+      "originalValue": 307000,
+      "creditScore": 720,
+      "originalLoan": 214900,
+      "currentLoan": 429800,
+      "ltv": null,
+      "state": "NY",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 3,
+      "asOfDate": "2018-01-01",
+      "originalValue": 213000,
+      "creditScore": 850,
+      "originalLoan": 149100,
+      "currentLoan": 298200,
+      "ltv": null,
+      "state": "NY",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 4,
+      "asOfDate": "2018-01-01",
+      "originalValue": 234000,
+      "creditScore": 670,
+      "originalLoan": 163800,
+      "currentLoan": 327600,
+      "ltv": null,
+      "state": "VT",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": true,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 5,
+      "asOfDate": "2018-01-01",
+      "originalValue": 234565,
+      "creditScore": 780,
+      "originalLoan": 164196,
+      "currentLoan": 328391,
+      "ltv": null,
+      "state": "CA",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 6,
+      "asOfDate": "2018-01-01",
+      "originalValue": 1234567,
+      "creditScore": 670,
+      "originalLoan": 864197,
+      "currentLoan": 1728394,
+      "ltv": null,
+      "state": "CA",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": true
+    },
+    {
+      "loanNumber": 7,
+      "asOfDate": "2018-01-01",
+      "originalValue": 234000,
+      "creditScore": 710,
+      "originalLoan": 163800,
+      "currentLoan": 327600,
+      "ltv": null,
+      "state": "TX",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 8,
+      "asOfDate": "2018-01-01",
+      "originalValue": 12000000,
+      "creditScore": 780,
+      "originalLoan": 8400000,
+      "currentLoan": 16800000,
+      "ltv": null,
+      "state": "TX",
+      "foreclosureStatus": true,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 9,
+      "asOfDate": "2018-01-01",
+      "originalValue": 230765,
+      "creditScore": 780,
+      "originalLoan": 161536,
+      "currentLoan": 323071,
+      "ltv": null,
+      "state": "NY",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
+    },
+    {
+      "loanNumber": 10,
+      "asOfDate": "2018-01-01",
+      "originalValue": 230765,
+      "creditScore": 780,
+      "originalLoan": 161536,
+      "currentLoan": 323071,
+      "ltv": null,
+      "state": "MA",
+      "foreclosureStatus": false,
+      "30DayDelinquent": false,
+      "60DayDelinquent": false,
+      "90DayDelinquent": false
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -3,9 +3,9 @@
 Add Documentation Here
 """
 
-from flask import Flask, Blueprint
+from flask import Flask
 
-from .globals import mail, migrate, api
+from .globals import mail, migrate
 
 
 def create_app(settings_override=None):
@@ -15,8 +15,6 @@ def create_app(settings_override=None):
     app.config.from_object(settings_override)
 
     register_appliances(app)
-
-    register_routes(app)
 
     register_cli(app)
 
@@ -30,21 +28,6 @@ def register_appliances(app):
     mail.init_app(app)
 
     migrate.init_app(app)
-
-
-def register_routes(app):
-    """
-    Register all route modules
-    """
-    api.init_app(app, title='')
-    api_master_blueprint = Blueprint('api', __name__, url_prefix='/api/v1')
-    api.init_app(api_master_blueprint)
-
-    # for name in find_modules('flaskr.blueprints'):
-    #     mod = import_string(name)
-    #     if hasattr(mod, 'bp'):
-    #         app.register_blueprint(mod.bp)
-    return None
 
 
 def register_cli(app):
