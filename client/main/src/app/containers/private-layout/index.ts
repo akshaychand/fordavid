@@ -1,1 +1,1 @@
-export * from './private-layout.component';
+export * from './private-layout.module';

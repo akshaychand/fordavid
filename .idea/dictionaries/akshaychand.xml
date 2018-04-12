@@ -2,6 +2,7 @@
   <dictionary name="akshaychand">
     <words>
       <w>initdb</w>
+      <w>upsert</w>
     </words>
   </dictionary>
 </component>

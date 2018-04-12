@@ -1,29 +1,24 @@
 import * as fromShared from './shared';
-import * as fromStatic from './static';
 
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
-export const STATIC_COMPONENTS = [
-  fromStatic.RegisterComponent,
-  fromStatic.LoginComponent,
-  fromStatic.ForgotComponent,
-  fromStatic.NotFoundComponent,
-  fromStatic.ErrorComponent
-];
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
-    ...STATIC_COMPONENTS
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    fromShared.SharedModule,
+    fromShared.MaterialModule,
 
-    fromShared.SharedModule
+    AppRoutingModule
   ],
   providers: [
     Title

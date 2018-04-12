@@ -5,10 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-    { path: 'login', component: fromStatic.LoginComponent },
-    { path: 'forgot', component: fromStatic.ForgotComponent },
-    { path: 'register', component: fromStatic.RegisterComponent },
-    { path: '**', component: fromStatic.NotFoundComponent },
+    { path: '', redirectTo: 'app', pathMatch: 'full'},
+    {
+        path: 'app',
+        loadChildren: 'app/containers/private-layout/private-layout.module#PrivateLayoutModule'
+    },
+    {
+        path: 'public',
+        loadChildren:  'app/containers/public-layout/public-layout.module#PublicLayoutModule'
+    }
 ];
 
 @NgModule({
