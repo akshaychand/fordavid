@@ -9,11 +9,12 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
-  APP_NAME = 'LoanViz	\xA9';
+  APP_NAME = 'LoanViz	\xAE';
   DEFAULT_TITLE = '';
 
   constructor(private router: Router,

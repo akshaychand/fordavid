@@ -5,6 +5,15 @@ import { MomentModule } from 'angular2-moment';
 import { NgModule } from '@angular/core';
 
 export const SHARED_MODULES = [
+
+    // Navigation
+    fromSharedModules.SideNavModule,
+    fromSharedModules.NavbarModule,
+    fromSharedModules.ToolboxModule,
+
+    // Charting + Data
+    fromSharedModules.ChartingModule,
+    fromSharedModules.DataTableModule
 ];
 
 export const THIRD_PARTY_MODULES = [
@@ -20,7 +29,9 @@ export const THIRD_PARTY_MODULES = [
 
         ...THIRD_PARTY_MODULES
     ],
-    exports: [],
+    exports: [
+        ...SHARED_MODULES
+    ],
     providers: [],
 })
 export class SharedModule {

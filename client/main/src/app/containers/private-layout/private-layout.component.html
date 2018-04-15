@@ -1,10 +1,28 @@
-<!-- <mat-sidenav-container fullscreen>
-    <md-toolbar color="primary">
-        <i class="material-icons app-toolbar-menu">menu</i>
-        <span class="app-toolbar-filler"></span>
-        <md-sidenav>
-        </md-sidenav>
-    </md-toolbar>
-</md-sidenav-container>-->
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <mat-toolbar-row>
+        <span><button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></span>
+        <span>{{title}}</span>
+        <app-navbar></app-navbar>
 
-<router-outlet></router-outlet>
+        <!-- This fills the remaining space of the current row -->
+        <span class="fill-remaining-space"></span>
+
+        <span><button mat-button (click)="toolbox.toggle()"><mat-icon>settings_applications</mat-icon></button></span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="over" [(opened)]="menuOpened" class="mat-elevation-z8">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav #toolbox mode="over" [(opened)]="opened" position="end" class="mat-elevation-z8">
+        <app-toolbox></app-toolbox>
+    </mat-sidenav>
+    
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+
+</mat-sidenav-container>

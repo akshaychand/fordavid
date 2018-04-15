@@ -9,7 +9,7 @@ migrate = Migrate()
 
 db = SQLAlchemy()
 
-api = Api(title='Loan Manager', version=1.0, description='API server for Consumer Loan Management')
+api = Api(title='Loan Viz.', version=1.0, description='API server for Consumer Loan Management')
 
 
 
