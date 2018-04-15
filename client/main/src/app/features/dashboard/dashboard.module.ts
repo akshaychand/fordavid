@@ -1,5 +1,6 @@
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
+import * as fromShared from './../../shared';
 
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -27,6 +28,9 @@ export const FEATURE_GUARDS = [
     ],
     imports: [
         CommonModule,
+
+        fromShared.SharedModule,
+        fromShared.MaterialModule,
 
         DashboardRoutingModule
     ],

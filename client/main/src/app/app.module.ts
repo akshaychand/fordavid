@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+
     fromShared.SharedModule,
     fromShared.MaterialModule,
 

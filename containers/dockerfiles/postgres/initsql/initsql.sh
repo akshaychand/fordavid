@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "${POSTGRES_USER}" <<-EOSQL
+    CREATE ROLE ${APP_USER} WITH LOGIN PASSWORD ${APP_PASSWORD};
+    CREATE DATABASE admin;
+    GRANT ALL PRIVILEGES ON DATABASE admin TO www-data;
+EOSQL
+
+psql -v ON_ERROR_STOP=1 --username "${POSTGRES_USER}" <<-EOSQL
+    CREATE USER www-data;
+    CREATE DATABASE loan;
+    GRANT ALL PRIVILEGES ON DATABASE loan TO www-data;
+EOSQL

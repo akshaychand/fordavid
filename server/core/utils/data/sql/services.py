@@ -9,38 +9,10 @@ class ModelService(object):
     application.
     """
     __model__ = None
-    __bind__ = None
+    __bind_key__ = None
     __default_order_by__ = None
 
-    def add(self, model):
-        """
-        Adds the instance of the model to the database session, but does not commit (unless autocommit feature is
-        enabled) in SQLAlchemy
-        :param model: instance of the model
-        """
-        self._isinstance(model)
-        db.session.add(model)
-        return model
-
-    def save(self, model):
-        """
-        Adds the instance of the model to the database and commits the transaction.
-        :param model: instance of the model
-        """
-        self._isinstance(model)
-        db.session.add(model)
-        db.session.commit()
-        return model
-
-    def upsert(self, model):
-        """
-        Inserts/Updates the model to the database and commits the transaction.
-        :param model: instance of the model
-        """
-        self._isinstance(model)
-        db.session.merge(model)
-        db.session.commit()
-        return model
+    # Read Operations
 
     def all(self):
         """
@@ -85,6 +57,39 @@ class ModelService(object):
         """
         return self.__model__.query.get_or_404(id)
 
+    # Pagination
+
+    def page(self, select=None, filters=None, order_by=None, page=1, limit=100, page_size=20, **kwargs):
+        """
+        Performs paginated operations on the model such as
+        :param select:
+        :param filters:
+        :param order_by:
+        :param page:
+        :param limit:
+        :param page_size:
+        :return:
+        """
+        if page <= 0:
+            raise ValueError('Page number cannot be less than 1!')
+
+        if order_by is None:
+            order_by = self.__default_order_by__
+
+        # filter_by = dict()
+        # if len(filters > 0):
+        #     filter_by = self.prepare_filters(filter)
+
+        items = self.__model__.query.filter_by(**kwargs).order_by(order_by).limit(limit).offset(
+            (page - 1) * page_size).all()
+
+        if page == 1 and len(items) < page_size:
+            total = len(items)
+        else:
+            total = self.__model__.query.order_by(None).count()
+
+        return Pagination(self.__model__.query, page, page_size, total, items)
+
     # CRUD operations
 
     def new(self, **kwargs):
@@ -124,6 +129,36 @@ class ModelService(object):
         db.session.commit()
         return model
 
+    def add(self, model):
+        """
+        Adds the instance of the model to the database session, but does not commit (unless autocommit feature is
+        enabled) in SQLAlchemy
+        :param model: instance of the model
+        """
+        self._isinstance(model)
+        db.session.add(model)
+        return model
+
+    def save(self, model):
+        """
+        Adds the instance of the model to the database and commits the transaction.
+        :param model: instance of the model
+        """
+        self._isinstance(model)
+        db.session.add(model)
+        db.session.commit()
+        return model
+
+    def upsert(self, model):
+        """
+        Inserts/Updates the model to the database and commits the transaction.
+        :param model: instance of the model
+        """
+        self._isinstance(model)
+        db.session.merge(model)
+        db.session.commit()
+        return model
+
     def bulk_insert(self, models):
         for model in models:
             self._isinstance(model)
@@ -136,38 +171,6 @@ class ModelService(object):
         sql = 'DELETE T FROM [{0}] T WHERE [{1}] IN ({2})'.format(table_name, key, values_to_in_clause)
         db.session.execute(sql)
         db.session.commit()
-
-    # Read operations
-
-    def page(self, select=None, filters=None, order_by=None, page=1, limit=100, page_size=20, **kwargs):
-        """
-        Performs paginated operations on the model such as
-        :param select:
-        :param filters:
-        :param order_by:
-        :param page:
-        :param limit:
-        :param page_size:
-        :return:
-        """
-        if page <= 0:
-            raise ValueError('Page number cannot be less than 1!')
-
-        if order_by is None:
-            order_by = self.__default_order_by__
-
-        # filter_by = dict()
-        # if len(filters > 0):
-        #     filter_by = self.prepare_filters(filter)
-
-        items = self.__model__.query.filter_by(**kwargs).order_by(order_by).limit(limit).offset((page-1)*page_size).all()
-
-        if page == 1 and len(items) < page_size:
-            total = len(items)
-        else:
-            total = self.__model__.query.order_by(None).count()
-
-        return Pagination(self.__model__.query, page, page_size, total, items)
 
     # Helper methods
 
@@ -205,4 +208,13 @@ class SQLService(object):
         pass
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def sql_to_dataframe(self, sql):
+        pass
+
+    def sql_to_csv(self, sql, file_path):
+        pass
+
+    def sql_to_json(self, sql):
         pass
