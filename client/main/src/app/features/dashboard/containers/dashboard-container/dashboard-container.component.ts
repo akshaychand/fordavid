@@ -1,3 +1,5 @@
+import * as fromDataTables from './../../../../models/datatable';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./dashboard-container.component.scss']
 })
 export class DashboardContainerComponent implements OnInit {
+
+    public options: fromDataTables.IDataTableOptions;
 
     constructor() { }
 

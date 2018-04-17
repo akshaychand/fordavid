@@ -6,8 +6,10 @@
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
-
-        <span><button mat-button (click)="toolbox.toggle()"><mat-icon>settings_applications</mat-icon></button></span>
+        <mat-nav-list>
+            <mat-list-item title="Settings" (click)="toolbox.toggle()"><mat-icon>settings_applications</mat-icon></mat-list-item>
+            <mat-list-item title="Logout"><mat-icon>power_settings_new</mat-icon></mat-list-item>
+        </mat-nav-list>
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -21,7 +23,7 @@
         <app-toolbox></app-toolbox>
     </mat-sidenav>
     
-    <section>
+    <section class="main-container">
         <router-outlet></router-outlet>
     </section>
 

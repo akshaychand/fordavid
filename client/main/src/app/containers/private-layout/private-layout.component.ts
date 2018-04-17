@@ -12,7 +12,7 @@ export class PrivateLayoutComponent implements OnInit, OnDestroy {
     public mobileQuery: MediaQueryList;
     private _mobileQueryListener: () => void;
 
-    public title = 'Loan Viz.\xAE';
+    public title = 'FOOBAR'; // 'Loan Viz.\xAE';
 
     constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');

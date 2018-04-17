@@ -76,3 +76,20 @@ export class Column implements IColumn {
     }
 
 }
+
+
+export interface IDataTableOptions {
+    allowExport: boolean;
+    exportFileName: string;
+}
+
+export class DataTableOptions implements IDataTableOptions {
+    allowExport: boolean;
+    exportFileName: string;
+
+    constructor(options?: IDataTableOptions) {
+        this.allowExport = options && options.allowExport;
+        this.exportFileName = options && options.exportFileName;
+
+    }
+}

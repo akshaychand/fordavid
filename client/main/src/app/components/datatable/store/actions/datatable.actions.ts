@@ -1,4 +1,4 @@
-import * as fromModels from './../../models';
+import * as fromModels from './../../../../models/datatable';
 
 import { Action } from '@ngrx/store';
 
@@ -13,7 +13,7 @@ export enum DataTableActionTypes {
     ADD_ENTITY = '[DataTable] Add entity',
     ADD_ENTITY_COMPLETE = '[DataTable] Add entity complete',
     ADD_ENTITY_FAILED = '[DataTable] Add entity failed',
-    ADD_ENTITIES = '[DataTable] ADd entities',
+    ADD_ENTITIES = '[DataTable] Add entities',
     ADD_ENTITIES_COMPLETE = '[DataTable] Add entities complete',
     ADD_ENTITIES_FAILED = '[DataTable] Add entities failed',
     UPSERT_ENTITY = '[DataTable] Update or add entity',

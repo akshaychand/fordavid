@@ -10,6 +10,19 @@ mat-sidenav {
     width: 320px;
 }
 
+.sidenav-container {
+    z-index: -1 !important;
+}
+
+.mat-list-item {
+    color: white;
+    float: left;
+}
+
 .fill-remaining-space {
     flex: 1 1 auto;
+}
+
+.main-container {
+    padding:0.5em;
 }

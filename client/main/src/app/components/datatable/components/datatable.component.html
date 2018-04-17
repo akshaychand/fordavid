@@ -1,0 +1,25 @@
+<!-- <ag-grid-angular  
+    #agGrid
+    style="width: 500px; height: 500px;" 
+    class="ag-theme-balham"
+
+    [enableStatusBar]="true"
+    [enableRangeSelection]="true"
+    [enableColResize]="true"
+    [enableSorting]="true"
+    [enableFilter]="true"
+
+    [rowData]="rowData" 
+    [domLayout]="'autoHeight'"
+    rowSelection="multiple"
+    [columnDefs]="columnDefs">
+</ag-grid-angular> -->
+
+<dx-data-grid
+    id="gridContainer"
+    [dataSource]="customers"
+    [columns]="['CompanyName', 'City', 'State', 'Phone', 'Fax']">
+
+    <dxo-export  *ngIf="allowExport" [enabled]="true" [fileName]="exportFileName" [allowExportSelectedData]="false"></dxo-export>
+
+</dx-data-grid>

@@ -3,6 +3,9 @@
 @import "https://fonts.googleapis.com/css?family=Material+Icons";
 @import "https://fonts.googleapis.com/css?family=Roboto:400,300";
 
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-balham.css";
+
 html, body {
   display: flex;
   flex-direction: column;
